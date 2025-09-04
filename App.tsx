@@ -1,12 +1,12 @@
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { Button, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   /*Usamos o useFonts para riar uma referência para a fonte que queremos utilizar no app. */
   const [fonteCarregada] = useFonts({
-    Monotom: require("./assets/fonts/Monoton-Regular.ttf"),
+    Monoton: require("./assets/fonts/Monoton-Regular.ttf"),
   });
 
   // Se a fonte ainda não foi carregada
@@ -22,10 +22,13 @@ export default function App() {
         <StatusBar style="auto" />
         <View style={estilos.viewlogo}>
           <Image source={require("./assets/dahora.png")} style={estilos.logo} />
-          <Text>Dá Hora filmes</Text>
+          <Text style={estilos.tituloApp}>Dá Hora filmes</Text>
         </View>
         <View style={estilos.viewBotoes}>
-          <Button color="purple" title="Buscar Filmes" />
+          <Pressable style={estilos.botaoInicial}>
+            <Text style={estilos.textoBotao}>Buscar Filmes</Text>
+          </Pressable>
+
           <Button title="Favoritos" />
         </View>
         <View style={estilos.viewRodape}>
@@ -50,13 +53,6 @@ const estilos = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  viewBotoes: {
-    backgroundColor: "cyan",
-    flex: 2,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-  },
   viewRodape: {
     backgroundColor: "magenta",
     flex: 0.5,
@@ -67,5 +63,25 @@ const estilos = StyleSheet.create({
   logo: {
     width: 128,
     height: 128,
+  },
+  tituloApp: {
+    fontSize: 32,
+    color: "#5451a6",
+    fontFamily: "Monoton",
+  },
+  viewBotoes: {
+    backgroundColor: "cyan",
+    flex: 2,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  botaoInicial: {
+    backgroundColor: "#5451a6",
+    padding: 16,
+    borderRadius: 8,
+  },
+  textoBotao: {
+    color: "white",
   },
 });
