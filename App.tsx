@@ -27,17 +27,51 @@ export default function App() {
           <Text style={estilos.tituloApp}>Dá Hora filmes</Text>
         </View>
         <View style={estilos.viewBotoes}>
-          <Pressable style={estilos.botaoInicial}>
-            <Ionicons name="search" size={24} color="white" />
-            <Text style={estilos.textoBotao}>Buscar Filmes</Text>
+          <Pressable
+            onPress={() => console.log("Botão clicado")}
+            style={({ pressed }) => [
+              estilos.botaoInicial,
+              pressed ? { backgroundColor: "#7A63D1" } : null,
+            ]}
+          >
+            <Ionicons name="search" size={22} color="white" />
+            <Text style={estilos.textoBotao}> Buscar Filmes</Text>
           </Pressable>
-
-          <Button title="Favoritos" />
+          <Pressable
+            onPress={() => console.log("Botão clicado")}
+            style={({ pressed }) => [
+              estilos.botaoInicial,
+              pressed ? { backgroundColor: "#7A63D1" } : null,
+            ]}
+          >
+            <Ionicons name="star" size={22} color="yellow"></Ionicons>
+            <Text style={estilos.textoBotao}> Favoritos</Text>
+          </Pressable>
         </View>
+        {/* Fim view main */}
         <View style={estilos.viewRodape}>
-          <Button title="Privacidade" />
-          <Button title="Sobre" />
+          <Pressable
+            onPress={() => console.log("Botão clicado")}
+            style={({ pressed }) => [
+              estilos.botaoInicial,
+              pressed ? { backgroundColor: "#7A63D1" } : null,
+            ]}
+          >
+            <Ionicons name="lock-closed" size={18} color="white"></Ionicons>
+            <Text style={estilos.textoBotao}> Privacidade</Text>
+          </Pressable>
+          <Pressable
+            onPress={() => console.log("Botão clicado")}
+            style={({ pressed }) => [
+              estilos.botaoInicial,
+              pressed ? { backgroundColor: "#7A63D1" } : null,
+            ]}
+          >
+            <Ionicons name="alert-circle" size={18} color="white"></Ionicons>
+            <Text style={estilos.textoBotao}> Sobre</Text>
+          </Pressable>
         </View>
+        {/* fim view rod */}
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -57,11 +91,12 @@ const estilos = StyleSheet.create({
     alignItems: "center",
   },
   viewRodape: {
-    backgroundColor: "magenta",
+    backgroundColor: "#5451a6",
     flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    borderRadius: 8,
   },
   logo: {
     width: 128,
@@ -73,11 +108,11 @@ const estilos = StyleSheet.create({
     fontFamily: "Monoton",
   },
   viewBotoes: {
-    backgroundColor: "cyan",
+    backgroundColor: "white",
     flex: 2,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "center",
+    alignItems: "flex-start",
   },
   botaoInicial: {
     backgroundColor: "#5451a6",
