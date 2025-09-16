@@ -31,7 +31,7 @@ export default function App() {
             <Ionicons name="search" size={24} color="white" />
             <Text style={estilos.textoBotao}>Buscar Filmes</Text>
           </Pressable>
-          B
+
           <Button title="Favoritos" />
         </View>
         <View style={estilos.viewRodape}>
