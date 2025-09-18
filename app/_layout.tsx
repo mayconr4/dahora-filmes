@@ -1,8 +1,8 @@
 import { useFonts } from "expo-font";
 import Loading from "../src/components/Loading";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { StatusBar } from "expo-status-bar";
 import { Stack } from "expo-router";
+import { StatusBar } from "react-native";
 
 export default function Layout() {
   /*Usamos o useFonts para riar uma referência para a fonte que queremos utilizar no app. */
@@ -17,7 +17,7 @@ export default function Layout() {
 
   return (
     <SafeAreaProvider>
-      <StatusBar style="auto" />
+      <StatusBar barStyle="default" backgroundColor="#5451a6" />
 
       <Stack
         screenOptions={{
