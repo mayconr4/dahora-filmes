@@ -11,6 +11,9 @@ import {
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 // Importando a biblioteca interna vector-icons
+
+// a anotação abaixo faz ignorar o erro do vector icons e possibilita rodar a aplicação
+// @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
 import Loading from "./src/components/Loading";
 
