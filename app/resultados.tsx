@@ -3,9 +3,28 @@ import { StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { ParametrosBusca } from "../src/types";
+import { useEffect } from "react";
+import { api } from "../src/services/api";
 
 export default function Resultados() {
   const { filme } = useLocalSearchParams<ParametrosBusca>();
+
+  /*Criando a lógica para acesso ao serviço (API) usando o axios */
+  useEffect(() => {
+    // Se não houver um filme dfinido, para tudo
+    if (!filme) return;
+
+    api
+      .get("/search/movie", {
+        params: {
+          languange: "pt-BR",
+          query: filme,
+          include_adult: false, // se quise filme adulto colocar true
+        },
+      })
+      .then((resposta) => console.log(resposta.data.results))
+      .catch((err) => console.error(err));
+  });
 
   return (
     <>
