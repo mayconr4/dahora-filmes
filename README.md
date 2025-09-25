@@ -4,6 +4,17 @@ Aplicatico desenvolvido utilizando React Native com Expo.
 
 ---
 
+## 05_uso-api-com-config-env
+
+- Cdastro no TheMovieDB para obter a API Key
+- Conversão do app.json para app.config.ts
+- Adição da propriedade extra.apiKey no app.config.ts
+- Instalação do Axios (lib muito usada para comunicação com APIs)
+- Configuração do service/api.ts comm parametros para acessar a API via Axios
+- Utilização do useEffect com o Axios para fazer consulta de filmes na API
+
+---
+
 ## 04_telas-basicas-de-busca-e-resultados
 
 - Criação da versão básicas da telas `Busca` e `Resultados`
