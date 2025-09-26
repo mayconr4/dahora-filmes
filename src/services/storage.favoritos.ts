@@ -10,7 +10,7 @@ const STORAGE_FAVORITOS = "filmes_favoritos";
  * Lê a lista de favoritos de Async Storage
  * Retorna um array vazio em case de erro ou chave inecistente
  */
-async function carregar(): Promise<Filme[]> {
+export async function carregar(): Promise<Filme[]> {
   try {
     // Lê a string salva no storage (pode vir null)
     const favoritosArmazenados = await AsyncStorage.getItem(STORAGE_FAVORITOS);
@@ -27,7 +27,7 @@ async function carregar(): Promise<Filme[]> {
 /**
  * Grava a lista de favoritos no Async Storage
  */
-async function salvarLista(lista: Filme[]): Promise<void> {
+export async function salvarLista(lista: Filme[]): Promise<void> {
   try {
     // Salva a lista de filmes no storager em formato de string
     await AsyncStorage.setItem(STORAGE_FAVORITOS, JSON.stringify(lista));
@@ -40,7 +40,7 @@ async function salvarLista(lista: Filme[]): Promise<void> {
  * Salvar um filme na lista de favoritos (e no próprio storage)
  * Retorna true se salvou com sucesso, false se o filme já estava nos favoritos
  */
-async function salvarFilmeFavorito(filme: Filme): Promise<boolean> {
+export async function salvarFilmeFavorito(filme: Filme): Promise<boolean> {
   const favoritos = await carregar();
 
   /*Verifica se um filme já existe com o mesmo id na lista/storage
@@ -60,4 +60,11 @@ async function salvarFilmeFavorito(filme: Filme): Promise<boolean> {
 
   // Retorna true sinalizando que o filme foi salvo
   return true;
+}
+
+/**
+ *chamar a função carregarRetornar Retornar a lista de favoritos
+ */
+export function buscarFavoritos(): Promise<Filme[]> {
+  return carregar();
 }
