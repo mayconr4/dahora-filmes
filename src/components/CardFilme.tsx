@@ -15,7 +15,7 @@ import { useRouter } from "expo-router";
 
 export default function CardFilme({ filme }: CardFilmeProps) {
   // Extraindo cada prop de dentro do filme
-  const { id, title, poster_path } = filme;
+  const { title, poster_path } = filme;
 
   const router = useRouter();
 

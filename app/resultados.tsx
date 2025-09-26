@@ -19,7 +19,7 @@ export default function Resultados() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Se não houver um filme dfinido, para tudo
+    // Se não houver um filme definido, para tudo
     if (!filme) return;
 
     //Ao começar as ações de busca na API, Iniciamos o loading
