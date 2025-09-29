@@ -83,3 +83,12 @@ export async function removerFilmeFavorito(id: number): Promise<void> {
   // Na ´rática, sobreescrevamos a lista anterior
   await salvarLista(listaAtualizada);
 }
+
+/* Remover comppletamente do storage os favoritos salvos */
+export async function apagarTodosFavoritos(): Promise<void> {
+  try {
+    await AsyncStorage.removeItem(STORAGE_FAVORITOS);
+  } catch (error) {
+    console.error("Erro ao apgar todos os favoritos: " + error);
+  }
+}
