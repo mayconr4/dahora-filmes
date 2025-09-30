@@ -82,6 +82,13 @@ export default function Favoritos() {
     }
   };
 
+  const apagarTudo = () => {
+    Alert.alert(
+      "❗Apagar todos os favoritos",
+      "Tem certeza que deseja apgar todos os filmes favoritos?"
+    );
+  };
+
   return (
     <>
       <Stack.Screen
