@@ -4,11 +4,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
 import { Link, Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 export default function Index() {
   return (
     // fragmento <></>
     <>
+      <StatusBar style="dark" />
       <Stack.Screen options={{ headerShown: false, headerTitle: "Home" }} />
 
       <SafeAreaView style={estilos.container}>
@@ -78,7 +80,7 @@ const estilos = StyleSheet.create({
     alignItems: "flex-start",
   },
   botaoInicial: {
-    backgroundColor: "#222",
+    backgroundColor: "#5451a6",
     padding: 16,
     borderRadius: 8,
     flexDirection: "row",

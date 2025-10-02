@@ -10,7 +10,7 @@ export default function Sobre() {
           headerTitle: "Sobre o App",
         }}
       />
-      <SafeAreaView style={estilos.container}>
+      <View style={estilos.container}>
         <ScrollView>
           {" "}
           <View style={estilos.card}>
@@ -46,7 +46,7 @@ export default function Sobre() {
             </Text>
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     </>
   );
 }
