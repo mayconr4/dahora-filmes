@@ -40,4 +40,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       projectId: "fa3a8c1e-478b-4812-8ca6-92bd46067da6",
     },
   },
+  updates: {
+    url: "https://u.expo.dev/fa3a8c1e-478b-4812-8ca6-92bd46067da6",
+  },
+  runtimeVersion: {
+    policy: "appVersion",
+  },
 });
